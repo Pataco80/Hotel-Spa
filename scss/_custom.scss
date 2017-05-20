@@ -1,10 +1,65 @@
+/* ------------------- Règles générales ---------------------- */
+
+/* ------------------- Titres ---------------------- */
 h2 {
   color: $primary-color;
   font-size: rem-calc(42);
   font-weight: bold;
 }
 
+/* ------------------- Boutons ---------------------- */
+.button {
+  @include button-style($secondary-color, darken($secondary-color,15), $white);
+  font-weight: bold;
+  font-size: rem-calc(16);
+  text-transform: uppercase;
+}
 
+/* ------------------- separator-image ---------------------- */
+
+/* ------------------- separator-image General ---------------------- */
+.separator-image {
+  height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  @include breakpoint(medium){
+    height: 350px;
+  }
+}/* ------------------- /separator-image General ---------------------- */
+
+/* ------------------- separator-image pool-image ---------------------- */
+.pool-image {
+  background-image: url(../assets/images/separators/small/separator01-image.jpg);
+  @include breakpoint(medium){
+    background-image: url(../assets/images/separators/medium/separator01-image.jpg);
+  }
+  @include breakpoint(large){
+    background-image: url(../assets/images/separators/large/separator01-image.jpg);
+  }
+}/* ------------------- /separator-image pool-image ---------------------- */
+
+/* ------------------- separator-image bar-image ---------------------- */
+.bar-image {
+  background-image: url(../assets/images/separators/small/separator02-image.jpg);
+  @include breakpoint(medium){
+    background-image: url(../assets/images/separators/medium/separator02-image.jpg);
+  }
+  @include breakpoint(large){
+    background-image: url(../assets/images/separators/large/separator02-image.jpg);
+  }
+}/* ------------------- /separator-image bar-image ---------------------- */
+
+/* ------------------- /separator-image ---------------------- */
+
+/* ------------------- /Règles générales ---------------------- */
+
+
+
+/* ------------------- Header ---------------------- */
+
+/* ------------------- Banière video ---------------------- */
 .promo-video {
   position: relative;
   width: 100%;
@@ -22,18 +77,28 @@ h2 {
     background: linear-gradient(rgba(0,74,141,0.7) 0%, rgba(1,22,59,0.7) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3004a8d', endColorstr='#b301163b',GradientType=0 );
   }
-}
+}/* ------------------- /Banière video ---------------------- */
 
-
-
+/* ------------------- logo et menu ---------------------- */
 .header-content {
   background: transparent;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-}
+  .menu-icon, .menu-icon:hover {
+    width: rem-calc(60);
+    height: rem-calc(36);
+    margin-top: rem-calc(25);
+    &::after{
+      height: rem-calc(8);
+      background-color: $white;
+      box-shadow: 0 28px 0 $white, 0 14px 0 $white;
+    }
+  }
+}/* ------------------- /logo et menu ---------------------- */
 
+/* ------------------- Slogan ---------------------- */
 .headliner {
   position: absolute;
   top: 400px;
@@ -51,18 +116,14 @@ h2 {
     border-bottom: 2px solid $white;
     text-transform: uppercase;
   }
-}
+}/* ------------------- Slogan ---------------------- */
 
-.menu-icon, .menu-icon:hover {
-  width: rem-calc(60);
-  height: rem-calc(36);
-  margin-top: rem-calc(25);
-  &::after{
-    height: rem-calc(8);
-    background-color: $white;
-    box-shadow: 0 28px 0 $white, 0 14px 0 $white;
-  }
-}
+/* ------------------- /Header ---------------------- */
+
+
+
+/* ------------------- Room Section ---------------------- */
+
 
 .rooms {
   padding: rem-calc(30);
@@ -109,49 +170,27 @@ h2 {
     }
   } 
 }
+/* ------------------- /Room Section ---------------------- */
 
-.button {
-  @include button-style($secondary-color, darken($secondary-color,15), $white);
-  font-weight: bold;
-  font-size: rem-calc(16);
-  text-transform: uppercase;
-}
 
-/* Separator image */
-.separator-image {
-  height: 200px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-  @include breakpoint(medium){
-    height: 350px;
-  }
-}
-/* Separator image 1*/
-.pool-image {
-  background-image: url(../assets/images/separators/small/separator01-image.jpg);
-  @include breakpoint(medium){
-    background-image: url(../assets/images/separators/medium/separator01-image.jpg);
-  }
-  @include breakpoint(large){
-    background-image: url(../assets/images/separators/large/separator01-image.jpg);
-  }
-}
-/* Separator image 2*/
-.bar-image {
-  background-image: url(../assets/images/separators/small/separator02-image.jpg);
-  @include breakpoint(medium){
-    background-image: url(../assets/images/separators/medium/separator02-image.jpg);
-  }
-  @include breakpoint(large){
-    background-image: url(../assets/images/separators/large/separator02-image.jpg);
-  }
-}
 
 /* About Us and Gallery */
+
+
+  .about-us, .gallery {
+    padding-top: rem-calc(30);
+    padding-bottom: rem-calc(30);
+    @include breakpoint(medium){
+      width: 50%;
+      padding:0;
+    }
+  }
+
 .about-us-gallery {
   position: relative;
+  @include breakpoint(medium){
+      padding: rem-calc(30 0);
+  }
   .bg-blue {
   background-color: transparent;
   position: absolute;
@@ -164,31 +203,27 @@ h2 {
       background-color: $primary-color;
     }
   }
-  .about-us, .gallery {
-    padding-top: rem-calc(30);
-    padding-bottom: rem-calc(30);
+  .about-us{
+    padding: rem-calc(30);
+    @include breakpoint(medium){
+      padding: rem-calc(0 0 0 15);
+    }
   }
   .gallery {
     background-color: $primary-color;
+    padding: rem-calc(30 25);
+    @include breakpoint(medium){
+      padding: 0;
     }
     h2 {
-
       color: $white;
+      padding-left: rem-calc(15);
     }
-       .column {
-         width: 100%;
-       }
-       &:nth-child(1n+0) {
-         padding-left: 0;
-         padding-right: rem-calc(10);
-        }
-        
-       &:nth-child(2n+0) {
-         padding-right: 0;
-         padding-left: rem-calc(10);
-       }
 
-    }
+  }
+  
+}
+
   
     .thumbnail {
       max-width: none;
