@@ -69,6 +69,7 @@ header{
   width: 100%;
   video {
     width: 100%;
+    height: 100%;
   }
   #overlay{
     position: absolute;
@@ -141,8 +142,9 @@ header{
     }
   }
   h2{
-      width: 100%;
-    }
+    width: 100%;
+    padding-left: rem-calc(15);
+  }
   /* ------------------- Rooms container ---------------------- */
   .rooms-container {
     margin-bottom: 0;
@@ -258,15 +260,14 @@ footer {
   padding-top: rem-calc(30);
   background-color: $primary-color;
   color: $white;
-  
   /* ------------------- Footer Links ---------------------- */
   a {
+    padding-left: 0;
     color: $white;
     &:hover{
       color: $white;
     }
   }
-  
   /* ------------------- contact-information ---------------------- */
   .contact-information {
     position: relative;
@@ -299,17 +300,23 @@ footer {
   /* ------------------- Footer About ---------------------- */  
   .footer-about {
     padding-top: rem-calc(30);
+    text-align: center;
     @include breakpoint(medium){
       padding-top: 0;
+      padding-right: rem-calc(30);
+      text-align: left;
     }
     .social{
       font-size: rem-calc(50);
       justify-content: center;
       &:hover {
         color: $white;
-        i{
-          color: $white;
-        }
+      }
+      li:last-child a {
+        padding-right: 0;
+      }
+      i {
+        margin-right: 0;
       }
       @include breakpoint(medium){
         justify-content: flex-end;
