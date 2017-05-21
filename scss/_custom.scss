@@ -296,7 +296,6 @@ footer {
       height: auto;
     }
   }/* ------------------- /contact-information ---------------------- */
-  
   /* ------------------- Footer About ---------------------- */  
   .footer-about {
     padding-top: rem-calc(30);
@@ -305,11 +304,15 @@ footer {
     }
     .social{
       font-size: rem-calc(50);
+      justify-content: center;
       &:hover {
         color: $white;
         i{
           color: $white;
         }
+      }
+      @include breakpoint(medium){
+        justify-content: flex-end;
       }
     }
     
@@ -317,10 +320,9 @@ footer {
   
   /* ------------------- Copyright ---------------------- */ 
   p.copyright {
-    padding: rem-calc(20 0);
-    background-color: darken($primary-color, 15);
     margin-top: rem-calc(10);
-    margin-bottom: 0;
+    margin-bottom: 0;    padding: rem-calc(20 0);
+    background-color: darken($primary-color, 15);
   }/* ------------------- /Copyright ---------------------- */ 
 }/* ------------------- /Footer ---------------------- */
 
