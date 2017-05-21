@@ -15,6 +15,7 @@ h2 {
   text-transform: uppercase;
 }
 
+
 /* ------------------- separator-image ---------------------- */
 
 /* ------------------- separator-image General ---------------------- */
@@ -60,6 +61,9 @@ h2 {
 /* ------------------- Header ---------------------- */
 
 /* ------------------- Banière video ---------------------- */
+header{
+  position: relative;
+}
 .promo-video {
   position: relative;
   width: 100%;
@@ -71,7 +75,7 @@ h2 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 200px;
+    height: 100%;
     background: -webkit-linear-gradient(rgba(0,74,141,0.7) 0%, rgba(1,22,59,0.7) 100%);
     background: -o-linear-gradient(rgba(0,74,141,0.7) 0%, rgba(1,22,59,0.7) 100%);
     background: linear-gradient(rgba(0,74,141,0.7) 0%, rgba(1,22,59,0.7) 100%);
@@ -101,17 +105,22 @@ h2 {
 /* ------------------- Slogan ---------------------- */
 .headliner {
   position: absolute;
-  top: 400px;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-  .small-10{
+  bottom: 0;
+  left: 50%;
+  width: 90%;
+  height: 100%;
+    .small-10{
     margin: 0 auto;
   }
   h1{
-    position: relative;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
     width:100%;
     color: $white;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
     border-top: 2px solid $white;
     border-bottom: 2px solid $white;
     text-transform: uppercase;
@@ -122,12 +131,20 @@ h2 {
 
 
 
-/* ------------------- Room Section ---------------------- */
-
+/* ------------------- Rooms Section ---------------------- */
 
 .rooms {
   padding: rem-calc(30);
-
+  .button{
+    margin-right: rem-calc(10);
+    @include breakpoint(medium){
+      margin-right: rem-calc(15);
+    }
+  }
+  h2{
+      width: 100%;
+    }
+  /* ------------------- Rooms container ---------------------- */
   .rooms-container {
     margin-bottom: 0;
     width: 100%;
@@ -135,7 +152,8 @@ h2 {
       justify-content: space-between;
       padding: 0;
     }
-
+    
+    /* ------------------- Room article ---------------------- */
     .room-container {
       margin-bottom: rem-calc(20);
       &:last-child {
@@ -144,15 +162,18 @@ h2 {
       @include breakpoint(medium){
         margin-bottom:0;
       }
+      /* ------------------- Room figure ---------------------- */
       .room-image {
         position: relative;
         width: 100%;
         height: auto;
         padding: 15px 15px 0 15px;
         background-color: $white;
+        /* ------------------- Room photo ---------------------- */
         img {
-        width: 100%;
+          width: 100%;
         }
+        /* ------------------- Room name ---------------------- */
         .room-title {
           color: $white;
           font-weight: bold;
@@ -161,30 +182,31 @@ h2 {
           bottom: 0;
           padding-left: rem-calc(20);
         }
-      }
+      }/* ------------------- /Room figure ---------------------- */
+      
+      /* ------------------- Room content ---------------------- */
       .room-content {
         padding: rem-calc(20);
         margin-bottom: rem-calc(20);
         background-color: $white;
-      }
-    }
-  } 
-}
-/* ------------------- /Room Section ---------------------- */
+      }/* ------------------- /Room content ---------------------- */
+    }/* ------------------- /Room article ---------------------- */
+  }/* ------------------- /Rooms container ---------------------- */
+}/* ------------------- /Room Section ---------------------- */
 
 
 
 /* About Us and Gallery */
 
 
-  .about-us, .gallery {
-    padding-top: rem-calc(30);
-    padding-bottom: rem-calc(30);
-    @include breakpoint(medium){
-      width: 50%;
-      padding:0;
-    }
+.about-us, .gallery {
+  padding-top: rem-calc(30);
+  padding-bottom: rem-calc(30);
+  @include breakpoint(medium){
+    width: 50%;
+    padding:0;
   }
+}
 
 .about-us-gallery {
   position: relative;
@@ -192,13 +214,13 @@ h2 {
       padding: rem-calc(30 0);
   }
   .bg-blue {
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 50%;
-  height: 100%;
-  z-index: -1;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
     @include breakpoint(medium){
       background-color: $primary-color;
     }
@@ -219,12 +241,6 @@ h2 {
       color: $white;
       padding-left: rem-calc(15);
     }
-
-  }
-  
-}
-
-  
     .thumbnail {
       max-width: none;
       width: 100%;
@@ -232,8 +248,11 @@ h2 {
       margin: rem-calc(20 0 20 0);
     }
 
+  }
+  
+}
 
-
+  
 
 .book-now {
   padding: rem-calc(50);
@@ -243,7 +262,6 @@ footer {
   padding-top: rem-calc(30);
   background-color: $primary-color;
   color: $white;
-  }
   a{
     color: $white;
   }
@@ -281,6 +299,9 @@ footer {
     font-size: rem-calc(50);
     &:hover {
       color: $white;
+      i{
+        color: $white;
+      }
     }
   }
   p.copyright {
@@ -289,7 +310,7 @@ footer {
     margin-top: rem-calc(10);
     margin-bottom: 0;
   }
-  
+}
 
 
     
