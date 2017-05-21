@@ -9,11 +9,25 @@
     <link rel="stylesheet" href="css/foundation-icons.css">
   </head>
   <body>
-  
-   <!-- Heder -->
-    <header class="row expanded">
-    <!-- Banière vidéo --> 
-      <div class="promo-video">
+    <!-- Off Canvas -->
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+
+          <!-- Menu -->
+          <ul class="vertical menu">
+            <li><a href="#">Foundation</a></li>
+            <li><a href="#">Dot</a></li>
+            <li><a href="#">ZURB</a></li>
+            <li><a href="#">Com</a></li>
+            <li><a href="#">Slash</a></li>
+            <li><a href="#">Sites</a></li>
+          </ul>
+        </div>
+        <div class="off-canvas-content" data-off-canvas-content>
+          <!-- Heder -->
+          <header class="row expanded">
+          <!-- Banière vidéo --> 
+          <div class="promo-video">
         <div id="overlay"></div>
         <video id="video" autoplay loop>
           <source data-interchabge[] src="assets/videos/videobg.mp4">
@@ -22,8 +36,8 @@
         </video>
       </div>
       
-      <!-- Logo et button hamburger -->
-      <div class="header-content">
+          <!-- Logo et button hamburger -->
+          <div class="header-content">
         <div class="row expanded align-justify">
           <!-- Logo --> 
           <div class="medium-4 columns">
@@ -32,21 +46,21 @@
           
           <!-- Menu icon hamburger -->
           <div class="medium-4 column text-right">
-            <a class="menu-icon text-align-right" href="#"></a>
+            <a class="menu-icon text-align-right" data-toggle="offCanvas"></a>
           </div><!-- /Menu icon hamburger -->
         </div>
       </div><!-- /.header-content -->
     
-      <!-- Contenu d'en-tête slogan -->
-      <div class="headliner row">
+          <!-- Contenu d'en-tête slogan -->
+          <div class="headliner row">
         <div class="small-10">
           <h1 class="text-center"><span class="hide">Hotel &amp; Spa</span>Passion for Excellence</h1>
         </div>
       </div><!-- /.headliner -->
-    </header><!-- /header -->
+        </header><!-- /header -->
     
-    <!-- Rooms Section -->
-    <section class="rooms row align-right">
+          <!-- Rooms Section -->
+          <section class="rooms row align-right">
       <h2 class="text-left">Our Rooms</h2>
       
       <!-- Rooms Container -->
@@ -95,11 +109,11 @@
       <button class="align-right button">View All</button>
     </section><!-- /Rooms Section -->
     
-    <!-- Separator image pool image -->
-    <div class="separator-image pool-image"></div>
+          <!-- Separator image pool image -->
+          <div class="separator-image pool-image"></div>
     
-    <!-- About Us and Gallery -->
-    <section class="row about-us-gallery expanded">
+          <!-- About Us and Gallery -->
+          <section class="row about-us-gallery expanded">
       <!-- Background blue -->
       <div class="bg-blue"></div>
       
@@ -141,11 +155,11 @@
       </div><!-- Flex Container About Us and Gallery  -->
     </section><!-- /About Us and Gallery -->
     
-    <!-- Separator image bar image-->
-    <div class="separator-image bar-image"></div>
+          <!-- Separator image bar image-->
+          <div class="separator-image bar-image"></div>
     
-    <!-- Book Now -->
-    <section class="book-now row align-center text-center">
+          <!-- Book Now -->
+          <section class="book-now row align-center text-center">
       <div class="large-8 columns">
         <h2>Book Now</h2>
         <article>
@@ -155,8 +169,8 @@
       </div>      
     </section><!-- /Book Now -->
         
-    <!-- footer -->
-    <footer class="bg-blue">
+          <!-- footer -->
+          <footer class="bg-blue">
       <div class="row align-center">
         <!-- Footer Nav -->
         <nav class="small-5 medium-3 large-5 columns">
@@ -194,7 +208,8 @@
       </div>
       <p class="copyright text-center">All Rights Reserved Hotel &amp; Spa 2015.</p>
     </footer><!-- /Footer -->
-    
+        </div>
+    </div>
     
     <!-- Plugins jQuery -->
     <script src="bower_components/jquery/dist/jquery.js"></script>

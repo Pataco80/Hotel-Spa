@@ -1,5 +1,7 @@
 /* ------------------- Règles générales ---------------------- */
-
+#mainmenu {
+  z-index: 1000;
+}
 /* ------------------- Titres ---------------------- */
 h2 {
   color: $primary-color;
@@ -92,6 +94,7 @@ header{
   left: 0;
   width: 100%;
   .menu-icon, .menu-icon:hover {
+    z-index: 3000;
     width: rem-calc(60);
     height: rem-calc(36);
     margin-top: rem-calc(25);
