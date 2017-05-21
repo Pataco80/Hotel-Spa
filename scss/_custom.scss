@@ -132,7 +132,6 @@ header{
 
 
 /* ------------------- Rooms Section ---------------------- */
-
 .rooms {
   padding: rem-calc(30);
   .button{
@@ -196,23 +195,13 @@ header{
 
 
 
-/* About Us and Gallery */
-
-
-.about-us, .gallery {
-  padding-top: rem-calc(30);
-  padding-bottom: rem-calc(30);
-  @include breakpoint(medium){
-    width: 50%;
-    padding:0;
-  }
-}
-
+/* ------------------- About Us and Gallery Section ---------------------- */
 .about-us-gallery {
   position: relative;
   @include breakpoint(medium){
       padding: rem-calc(30 0);
   }
+  /* ------------------- Background Gallery Section ---------------------- */
   .bg-blue {
     background-color: transparent;
     position: absolute;
@@ -225,17 +214,22 @@ header{
       background-color: $primary-color;
     }
   }
+  /* ------------------- About Us Section ---------------------- */
   .about-us{
     padding: rem-calc(30);
     @include breakpoint(medium){
       padding: rem-calc(0 0 0 15);
+      width: 50%;
     }
-  }
+  }/* ------------------- /About Us Section ---------------------- */
+
+  /* ------------------- Gallery Section ---------------------- */
   .gallery {
     background-color: $primary-color;
     padding: rem-calc(30 25);
     @include breakpoint(medium){
       padding: 0;
+      width: 50%;
     }
     h2 {
       color: $white;
@@ -248,16 +242,18 @@ header{
       margin: rem-calc(20 0 20 0);
     }
 
-  }
-  
-}
+  }/* ------------------- /Gallery Section ---------------------- */
+}/* ------------------- /About Us and Gallery Section ---------------------- */
+
 
   
-
+/* ------------------- Book Now Section ---------------------- */
 .book-now {
   padding: rem-calc(50);
-}
+}/* ------------------- /Book Now Section ---------------------- */
 
+
+/* ------------------- Footer ---------------------- */
 footer {
   padding-top: rem-calc(30);
   background-color: $primary-color;
@@ -265,12 +261,13 @@ footer {
   a{
     color: $white;
   }
+  
+  /* ------------------- contact-information ---------------------- */
   .contact-information {
     position: relative;
     h4{
       margin-left: rem-calc(60);
     }
-    
     li {
       position: relative;
       padding-top: rem-calc(20);
@@ -293,8 +290,9 @@ footer {
       padding-top: 0;
       height: auto;
     }
+  }/* ------------------- /contact-information ---------------------- */
   
-  }
+  /* ------------------- Social icon ---------------------- */  
   .social{
     font-size: rem-calc(50);
     &:hover {
@@ -303,14 +301,16 @@ footer {
         color: $white;
       }
     }
-  }
+  }/* ------------------- /Social icon ---------------------- */
+  
+  /* ------------------- Copyright ---------------------- */ 
   p.copyright {
     padding: rem-calc(20 0);
     background-color: darken($primary-color, 15);
     margin-top: rem-calc(10);
     margin-bottom: 0;
-  }
-}
+  }/* ------------------- /Copyright ---------------------- */ 
+}/* ------------------- /Footer ---------------------- */
 
 
     
