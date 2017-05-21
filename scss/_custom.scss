@@ -258,8 +258,13 @@ footer {
   padding-top: rem-calc(30);
   background-color: $primary-color;
   color: $white;
-  a{
+  
+  /* ------------------- Footer Links ---------------------- */
+  a {
     color: $white;
+    &:hover{
+      color: $white;
+    }
   }
   
   /* ------------------- contact-information ---------------------- */
@@ -292,15 +297,22 @@ footer {
     }
   }/* ------------------- /contact-information ---------------------- */
   
-  /* ------------------- Social icon ---------------------- */  
-  .social{
-    font-size: rem-calc(50);
-    &:hover {
-      color: $white;
-      i{
+  /* ------------------- Footer About ---------------------- */  
+  .footer-about {
+    padding-top: rem-calc(30);
+    @include breakpoint(medium){
+      padding-top: 0;
+    }
+    .social{
+      font-size: rem-calc(50);
+      &:hover {
         color: $white;
+        i{
+          color: $white;
+        }
       }
     }
+    
   }/* ------------------- /Social icon ---------------------- */
   
   /* ------------------- Copyright ---------------------- */ 
