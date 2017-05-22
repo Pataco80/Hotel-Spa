@@ -59,6 +59,32 @@ h2 {
 /* ------------------- /Règles générales ---------------------- */
 
 
+/*  ------------------ Off-canvas ------------------ */
+.off-canvas {
+  h3, a {
+    color: $white;
+  }
+  a {
+    border: none;
+    &:hover, &:focus, &:active {
+      color: darken($secondary-color,15);
+    }
+    &:hover {
+      padding-top: 10px;
+      padding-bottom: 18px;
+      font-size: rem-calc(20);
+      vertical-align: middle;
+    }
+    &:active, &:focus {
+      background-color: #f00;
+      color: $white;
+    }
+  }
+  
+}
+
+
+/*  ------------------ /Off-canvas ------------------ */
 
 /* ------------------- Header ---------------------- */
 
