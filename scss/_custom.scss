@@ -169,23 +169,22 @@ header{
   top: 0;
   left: 0;
   width: 100%;
+
   .menu-icon, .menu-icon:hover {
     z-index: 3000;
     width: rem-calc(40);
     height: rem-calc(24);
-    margin-top: rem-calc(10);
     @include breakpoint(medium) {
-      margin-top:rem-calc(20);
       width: rem-calc(60);
-      height: rem-calc(48);
+      height: rem-calc(32);
     }
     &::after{
-      height: rem-calc(5);
+      height: rem-calc(4);
       background-color: $white;
       box-shadow: 0 20px 0 $white, 0 10px 0 $white;
       @include breakpoint(medium) {
-        height: rem-calc(8);
-        box-shadow: 0 28px 0 $white, 0 14px 0 $white;
+        height: rem-calc(6);
+        box-shadow: 0 32px 0 $white, 0 16px 0 $white;
       }
     }
   }
@@ -228,7 +227,7 @@ header{
     padding: rem-calc(30);
   }
   .button{
-    margin-right: rem-calc(10);
+    margin-right: rem-calc(15);
   }
   h2{
     width: 100%;
@@ -306,7 +305,7 @@ header{
   }
   /* ------------------- About Us Section ---------------------- */
   .about-us{
-    padding: rem-calc(20);
+    padding: rem-calc(25);
     @include breakpoint(medium){
       padding: rem-calc(0 30);
       width: 50%;
