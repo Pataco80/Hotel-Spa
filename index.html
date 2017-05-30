@@ -201,24 +201,39 @@
           <!-- Modal container -->
           <div class="reveal" id="modal-book" data-reveal data-animation-in="scale-in-up">
             <h2 class="columns">Booking Form</h2>
-            <form action="" data-abaide novalidate>
+            <form data-abide novalidate>
               <div class="row small-up-1 medium-up-2">
                   <label class="columns" for="first-name">First Name
                     <input id="first-name" type="text" placeholder="Your First Name" required>
+                    <span class="form-error">
+                      <i class="fi-alert"></i> this it's required.
+                    </span>
                   </label>
                   <label class="columns" for="last-name">Last Name
                     <input id="last-name" type="text" placeholder="Your Last Name" required>
+                    <span class="form-error">
+                      <i class="fi-alert"></i> this it's required.
+                    </span>
                   </label>
                   <label class="columns" for="email">E-mail
                     <input id="email" type="email" placeholder="Your Email" required>
+                    <span class="form-error">
+                      <i class="fi-alert"></i> this it's required.
+                    </span>
                   </label>
                   <label class="columns" for="phone">Phone Number
                     <input id="phone" type="tel" placeholder="Your Phone Number" required>
+                    <span class="form-error">
+                      <i class="fi-alert"></i> this it's required.
+                    </span>
                   </label>
               </div>
               <div class="row">
                 <label class="columns" for="message">Message
                   <textarea name="message" id="message" rows="8" placeholder="Your Message" required></textarea>
+                  <span class="form-error">
+                      <i class="fi-alert"></i> this it's required.
+                    </span>
                 </label>
               </div>
               <div class="row align-spaced box-button">
