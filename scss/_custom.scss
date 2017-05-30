@@ -174,9 +174,11 @@ header{
     z-index: 3000;
     width: rem-calc(40);
     height: rem-calc(24);
+    margin-right: rem-calc(15);
     @include breakpoint(medium) {
       width: rem-calc(60);
       height: rem-calc(32);
+      margin-right: rem-calc(20);
     }
     &::after{
       height: rem-calc(4);
@@ -247,7 +249,7 @@ header{
       &:last-child {
         margin-bottom: 0;
       }
-      @include breakpoint(medium){
+      @include breakpoint(large){
         margin-bottom:0;
       }
       /* ------------------- Room figure ---------------------- */
@@ -338,14 +340,9 @@ header{
   
 /* ------------------- Book Now Section ---------------------- */
 .book-now {
-  padding: rem-calc(50);
+  padding: rem-calc(50 30);
   
 }
-
-
-
-
-
 /* ------------------- /Book Now Section ---------------------- */
 
 
@@ -354,6 +351,11 @@ footer {
   padding-top: rem-calc(30);
   background-color: $primary-color;
   color: $white;
+  .footer-container {
+    @include breakpoint(medium) {
+      padding-right: 1rem;
+    }
+  }
   /* ------------------- Footer Links ---------------------- */
   a {
     padding-left: 0;
@@ -362,28 +364,50 @@ footer {
       color: $white;
     }
   }
+  .sitemap .menu>li>a {
+    padding: 0.7rem 0;
+    @include breakpoint(large) {
+      padding: 0.7rem 1rem;
+    }
+  }
+  
   /* ------------------- contact-information ---------------------- */
   .contact-information {
     position: relative;
+
     h4{
-      margin-left: rem-calc(60);
+      margin-left: rem-calc(38);
+      @include breakpoint(medium) {
+        margin-left: rem-calc(60);
+      }
     }
     li {
       position: relative;
-      padding-top: rem-calc(20);
-      padding-left: rem-calc(60);
+      padding-top: rem-calc(10);
+      padding-left: rem-calc(38);
       height: rem-calc(45);
+      @include breakpoint(medium) {
+        padding-top: rem-calc(20);
+        padding-left: rem-calc(60);
+      }
       i {
         position: absolute;
-        font-size: rem-calc(50);
+        font-size: rem-calc(40);
         top: -5px; left: 0;
+        @include breakpoint(medium) {
+          font-size: rem-calc(50);
+          top: -5px; left: 0;
+        }
       }
     }
     .map li:first-child{
       padding-top: rem-calc(3);
       height: auto;
       i{
-        top: rem-calc(-12);
+        top: rem-calc(0);
+        @include breakpoint(medium) {
+          top: rem-calc(-12);
+        }
       }
     }
     .map li:last-child{
@@ -397,7 +421,6 @@ footer {
     text-align: center;
     @include breakpoint(medium){
       padding-top: 0;
-      padding-right: rem-calc(30);
       text-align: left;
     }
     .social{
