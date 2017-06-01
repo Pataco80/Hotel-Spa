@@ -1,3 +1,16 @@
+/*function modalheight(){
+  var windowheight = $(window).height();
+  $('.reveal').css({'height':windowheight + 'px'});
+  console.log(windowheight);
+}
+  modalheight();
+*/
+
+$(function(){
+  $('body').is('.is-reveal-open', function(){
+    $(this).find('.reveal-overlay').css({'display':'flex !important'});
+  });
+});
 
 
 $(function(){

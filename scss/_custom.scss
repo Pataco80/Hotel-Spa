@@ -31,10 +31,26 @@ h2 {
   text-transform: uppercase;
 }
 
-.button[type="reset"] {
+.button[type="reset"], .button.close-button-gallery {
   @include button-hollow;
   border: 2px solid $secondary-color;
   color: $secondary-color;
+}
+.button.round {
+  border-radius: 1000px;
+}
+.button.close-button-gallery {
+  width: 36px;
+  align-self: flex-end;
+  padding: rem-calc(5);
+  position: absolute;
+  right: -18px;
+  top: -18px;
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
 }
 /* ------------------- Boutons ---------------------- */
 
@@ -98,6 +114,29 @@ h2 {
 /* ------------------- /separator-image ---------------------- */
 
 /* ------------------- Gallery Section ---------------------- */
+.reveal {
+  display: flex;
+  box-sizing: border-box;
+  height: auto;
+  min-height: auto !important;
+  align-items: center;
+}
+
+#modal-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+  top:10px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
 .gallery {
   background-color: $primary-color;
   padding: rem-calc(30 15);
@@ -490,7 +529,11 @@ footer {
     @include breakpoint(medium){
       width: 50%;
     }
-  }/* ------------------- /gallery ---------------------- */
+  }
+  .button.close-button-gallery {
+  }
+  
+  /* ------------------- /gallery ---------------------- */
 }/* ------------------- /About Us and Gallery Section ---------------------- */
 
   

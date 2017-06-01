@@ -178,7 +178,13 @@
                 </div>
 
                 <!-- Modal container -->
-                <div class="reveal" id="modal-gallery" data-reveal data-animation-in="scale-in-up">
+                <div class="reveal" id="modal-gallery" data-reveal data-close-on-click="true" data-animation-in="scale-in-up" data-animation-out="scale-out-down">
+                  <button class="button close-button-gallery round hollow" data-close aria-label="Close reveal" type="button">
+                    <!-- Screen readers will see "close" -->
+                    <span class="show-for-sr">Close</span>
+                    <!-- Visual users will see the X, but not the "Close" text -->
+                    <span class="" aria-hidden="true"><i class="fi-x"></i></span>
+                  </button>
                   <img src=""  id="image-container">
                 </div><!-- /Modal container -->
               </div><!-- /Gallery -->
