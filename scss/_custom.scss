@@ -1,16 +1,27 @@
 /* ------------------- Règles générales ---------------------- */
+.bg-blue {
+  background-color: $primary-color;
+}
 /* ------------------- Flex-grid ------------------- */
+
 @include breakpoint(medium) {
   .medium-align-self-top {
     align-self: flex-start;
   }
 }
-/* ------------------- Titres ---------------------- */
+/* ------------------- /Flex-grid ------------------- */
+
+/* ------------------- Text-class ------------------- */
 h2 {
   color: $primary-color;
   font-size: rem-calc(42);
   font-weight: bold;
 }
+
+.text-white {
+  color: $white;
+}
+/* ------------------- /Text-class ------------------- */
 
 /* ------------------- Boutons ---------------------- */
 .button {
@@ -20,9 +31,14 @@ h2 {
   text-transform: uppercase;
 }
 
+.button[type="reset"] {
+  @include button-hollow;
+  border: 2px solid $secondary-color;
+  color: $secondary-color;
+}
+/* ------------------- Boutons ---------------------- */
 
 /* ------------------- separator-image ---------------------- */
-
 /* ------------------- separator-image General ---------------------- */
 .separator-image {
   height: 200px;
@@ -57,7 +73,48 @@ h2 {
   }
 }/* ------------------- /separator-image bar-image ---------------------- */
 
+/* ------------------- separator-image room-image ---------------------- */
+.rooms-image {
+  background-image: url(../assets/images/separators/small/separator03-image.jpg);
+  @include breakpoint(medium){
+    background-image: url(../assets/images/separators/medium/separator03-image.jpg);
+  }
+  @include breakpoint(large){
+    background-image: url(../assets/images/separators/large/separator03-image.jpg);
+  }
+}/* ------------------- /separator-image room-image ---------------------- */
+
+/* ------------------- separator-image room01-image ---------------------- */
+.room01-image {
+  background-image: url(../assets/images/separators/small/separator-room01-image.jpg);
+  @include breakpoint(medium){
+    background-image: url(../assets/images/separators/medium/separator-room01-image.jpg);
+  }
+  @include breakpoint(large){
+    background-image: url(../assets/images/separators/large/separator-room01-image.jpg);
+  }
+}/* ------------------- /separator-image room-image ---------------------- */
+
 /* ------------------- /separator-image ---------------------- */
+
+/* ------------------- Gallery Section ---------------------- */
+.gallery {
+  background-color: $primary-color;
+  padding: rem-calc(30 15);
+  @include breakpoint(medium){
+    padding: rem-calc(0 20);
+  }
+  h2 {
+    color: $white;
+    padding-left: rem-calc(15);
+  }
+  .thumbnail {
+    max-width: none;
+    width: 100%;
+    height: auto;
+    margin: rem-calc(20 0 20 0);
+  }
+}/* ------------------- /Gallery Section ---------------------- */
 
 /* ------------------- /Règles générales ---------------------- */
 
@@ -109,8 +166,8 @@ h2 {
         font-size: rem-calc(15);
       }
     }
-
   }
+  
   li.is-submenu-parent-item {
     height: auto;
     text-align: center;
@@ -123,23 +180,17 @@ h2 {
         color: $white !important;
         transform: none;
       }
-      
     }
   }
-  li.js-drilldown-back {
-    a{
-      justify-content: center;
-      &:hover{
-        transform: none;
-      }
+  li.js-drilldown-back a{
+    justify-content: center;
+    &:hover{
+      transform: none;
     }
-    
-  }
-  
+  }  
 }
-  
-
 /*  ------------------ /Off-canvas ------------------ */
+
 
 /* ------------------- Header ---------------------- */
 
@@ -178,7 +229,6 @@ header{
   top: 0;
   left: 0;
   width: 100%;
-
   .menu-icon, .menu-icon:hover {
     z-index: 3000;
     width: rem-calc(40);
@@ -208,7 +258,7 @@ header{
   left: 50%;
   width: 90%;
   height: 100%;
-    .small-10{
+  .small-10{
     margin: 0 auto;
   }
   h1{
@@ -233,145 +283,11 @@ header{
 /* ------------------- /Header ---------------------- */
 
 
-
-/* ------------------- Rooms Section ---------------------- */
-.rooms {
-  padding: rem-calc(15);
-  width: 100%;
-  @include breakpoint(large) {
-    padding: rem-calc(30);
-  }
-  .button{
-    margin-right: rem-calc(15);
-  }
-  h2{
-    width: 100%;
-    padding-left: rem-calc(15);
-  }
-  /* ------------------- Rooms container ---------------------- */
-  .rooms-container {
-    margin: 0;
-    width: 100%;
-    @include breakpoint(medium){
-      padding: 0;
-    }
-    
-    /* ------------------- Room article ---------------------- */
-    .room-container {
-      margin-bottom: rem-calc(20);
-      &:last-child {
-        margin-bottom: 0;
-      }
-      @include breakpoint(large){
-        margin-bottom:0;
-      }
-      /* ------------------- Room figure ---------------------- */
-      .room-image {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 15px 15px 0 15px;
-        background-color: $white;
-        /* ------------------- Room photo ---------------------- */
-        img {
-          width: 100%;
-        }
-        /* ------------------- Room name ---------------------- */
-        .room-title {
-          color: $white;
-          font-weight: bold;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          padding-left: rem-calc(20);
-        }
-      }/* ------------------- /Room figure ---------------------- */
-      
-      /* ------------------- Room content ---------------------- */
-      .room-content {
-        padding: rem-calc(20);
-        margin-bottom: rem-calc(20);
-        background-color: $white;
-      }/* ------------------- /Room content ---------------------- */
-    }/* ------------------- /Room article ---------------------- */
-  }/* ------------------- /Rooms container ---------------------- */
-}/* ------------------- /Room Section ---------------------- */
-
-
-
-/* ------------------- About Us and Gallery Section ---------------------- */
-.about-us-gallery {
-  position: relative;
-  @include breakpoint(medium){
-      padding: rem-calc(30 0);
-  }
-  /* ------------------- Background Gallery Section ---------------------- */
-  .bg-blue {
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    z-index: -1;
-    @include breakpoint(medium){
-      background-color: $primary-color;
-    }
-  }
-  /* ------------------- About Us Section ---------------------- */
-  .about-us{
-    padding: rem-calc(25);
-    @include breakpoint(medium){
-      padding: rem-calc(0 30);
-      width: 50%;
-    }
-  }/* ------------------- /About Us Section ---------------------- */
-
-  /* ------------------- Gallery Section ---------------------- */
-  .gallery {
-    background-color: $primary-color;
-    padding: rem-calc(30 15);
-    @include breakpoint(medium){
-      padding: rem-calc(0 20);
-      width: 50%;
-    }
-    h2 {
-      color: $white;
-      padding-left: rem-calc(15);
-    }
-    .thumbnail {
-      max-width: none;
-      width: 100%;
-      height: auto;
-      margin: rem-calc(20 0 20 0);
-    }
-
-  }/* ------------------- /Gallery Section ---------------------- */
-}/* ------------------- /About Us and Gallery Section ---------------------- */
-
-
-  
-/* ------------------- Book Now Section ---------------------- */
-.book-now {
-  padding: rem-calc(50 30);
-  
-}
-/* ------------------- /Book Now Section ---------------------- */
-
-
 /* ------------------- Footer ---------------------- */
 footer {
   padding-top: rem-calc(30);
   background-color: $primary-color;
   color: $white;
-  .footer-container {
-    @include breakpoint(medium) {
-      padding: 0 1rem;
-    }
-    @include breakpoint(large) {
-      padding-left: 0;
-    }
-  }
   /* ------------------- Footer Links ---------------------- */
   a {
     padding-left: 0;
@@ -386,6 +302,7 @@ footer {
       padding: 0.7rem 1rem;
     }
   }
+  /* ------------------- /Footer Links ---------------------- */
   
   /* ------------------- contact-information ---------------------- */
   .contact-information {
@@ -431,6 +348,7 @@ footer {
       height: auto;
     }
   }/* ------------------- /contact-information ---------------------- */
+  
   /* ------------------- Footer About ---------------------- */  
   .footer-about {
     padding-top: rem-calc(30);
@@ -439,6 +357,7 @@ footer {
       padding-top: 0;
       text-align: left;
     }
+    /* ------------------- Social icon ---------------------- */
     .social{
       font-size: rem-calc(50);
       justify-content: center;
@@ -464,18 +383,161 @@ footer {
     margin-bottom: 0;    padding: rem-calc(20 0);
     background-color: darken($primary-color, 15);
   }/* ------------------- /Copyright ---------------------- */ 
+  
 }/* ------------------- /Footer ---------------------- */
 
 
-/* ----------------------------- Pages internes -------------------------------- */
-.content-page {
+
+/* ----------------------------- Pages -------------------------------- */
+
+/* ----------------------------- index.html -------------------------------- */
+.rooms {
   padding: rem-calc(30 15);
-}
-/* ------------------- About Us ---------------------- */
+  width: 100%;
+  @include breakpoint(large) {
+    padding: rem-calc(30);
+  }
+  .button{
+    margin: rem-calc(15 15 0 0);
+  }
+  h2{
+    width: 100%;
+    padding-left: rem-calc(15);
+  }
+  /* ------------------- Rooms container ---------------------- */
+  .rooms-container {
+    margin: 0;
+    width: 100%;
+    @include breakpoint(medium){
+      padding: 0;
+    }
+    
+    /* ------------------- Room article ---------------------- */
+    .room-container {
+      margin-bottom: rem-calc(20);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include breakpoint(large){
+        margin-bottom: rem-calc(0);
+      }
+      a {
+        color: $black;
+      }
+      /* ------------------- Room figure ---------------------- */
+      .room-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px 15px 0 15px;
+        background-color: $white;
+        /* ------------------- Room photo ---------------------- */
+        img {
+          width: 100%;
+        }
+        /* ------------------- Room name ---------------------- */
+        .room-title {
+          color: $white;
+          font-weight: bold;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          padding-left: rem-calc(20);
+        }
+      }/* ------------------- /Room figure ---------------------- */
+      
+      /* ------------------- Room content ---------------------- */
+      .room-content {
+        padding: rem-calc(20);
+        background-color: $white;
+      }/* ------------------- /Room content ---------------------- */
+    }/* ------------------- /Room article ---------------------- */
+  }/* ------------------- /Rooms container ---------------------- */
+}/* ------------------- /Room Section ---------------------- */
+
+/* ------------------- About Us and Gallery Section ---------------------- */
+.about-us-gallery {
+  position: relative;
+  @include breakpoint(medium){
+      padding: rem-calc(30 0);
+  }
+  /* ------------------- About Us Section ---------------------- */
+  .about-us{
+    padding: rem-calc(25);
+    @include breakpoint(medium){
+      padding: rem-calc(0 30);
+      width: 50%;
+    }
+  }/* ------------------- /About Us Section ---------------------- */
+  
+  
+  /* ------------------- gallery Section ---------------------- */
+  /* ------------------- Background Gallery ---------------------- */
+  .bg-blue {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    @include breakpoint(medium){
+      background-color: $primary-color;
+    }
+  }/* ------------------- /Background Gallery ---------------------- */
+  /* ------------------- Gallery ---------------------- */
+  .gallery {
+    @include breakpoint(medium){
+      width: 50%;
+    }
+  }/* ------------------- /gallery ---------------------- */
+}/* ------------------- /About Us and Gallery Section ---------------------- */
+
+  
+/* ------------------- Book Now Section ---------------------- */
+.book-now {
+  padding: rem-calc(50 30);
+  
+}/* ------------------- /Book Now Section ---------------------- */
+
+/* ----------------------------- /index.html -------------------------------- */
+
+
+
+/* ------------------- About Us.html ---------------------- */
 .photo img { 
   width: 100%;
 }
-/* ------------------- /About Us ---------------------- */
+/* ------------------- /About Us.html ---------------------- */
 
 
-/* ----------------------------- Pages internes -------------------------------- */
+
+/* ------------------- services.html ---------------------- */
+.content-page {
+  .content-text, .photo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 300px;
+  }
+}
+/* ------------------- /services.html ---------------------- */
+
+
+
+/* ------------------- Room Template ---------------------- */
+.content-page {
+  padding: rem-calc(30 15);
+  &.expanded {
+    padding: rem-calc(30 0 0 0);
+    .room-menu {
+      margin-top: rem-calc(15);
+    }
+    section:not(#head-room) {
+      padding: rem-calc(30);
+    }
+  }
+}
+/* ------------------- /Room Template ---------------------- */
+
+/* ----------------------------- /Pages -------------------------------- */
