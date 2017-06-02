@@ -16,6 +16,9 @@ h2 {
   color: $primary-color;
   font-size: rem-calc(42);
   font-weight: bold;
+  &.show-for-small-only {
+    margin-bottom: rem-calc(30);
+  }
 }
 
 .text-white {
@@ -39,19 +42,7 @@ h2 {
 .button.round {
   border-radius: 1000px;
 }
-.button.close-button-gallery {
-  width: 36px;
-  align-self: flex-end;
-  padding: rem-calc(5);
-  position: absolute;
-  right: -18px;
-  top: -18px;
-  opacity: 0.5;
-  transition: all 0.5s ease-in-out;
-  &:hover {
-    opacity: 1;
-  }
-}
+
 /* ------------------- Boutons ---------------------- */
 
 /* ------------------- separator-image ---------------------- */
@@ -113,30 +104,56 @@ h2 {
 
 /* ------------------- /separator-image ---------------------- */
 
-/* ------------------- Gallery Section ---------------------- */
+/* ------------------- Modal ---------------------- */
+/* ------------------- Modal general ---------------------- */
+
 .reveal {
   display: flex;
   box-sizing: border-box;
   height: auto;
   min-height: auto !important;
   align-items: center;
-}
-
-#modal-gallery {
-  display: flex;
   flex-direction: column;
+  border-radius: 0.5rem;
+  width: 88%;
+  margin: 0 auto;
+  overflow: visible;
+  button[data-close] {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    align-self: flex-end;
+    position: absolute;
+    right: -0.75rem;
+    top: -0.75rem;
+    opacity: 0.3;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      opacity: 1;
+      width: 2rem;
+      height: 2rem;
+      right: -1rem;
+      top: -1rem;
+      
+    }
+  }
+}/* ------------------- Modal general ---------------------- */
+
+/* ------------------- Modal gallery ---------------------- */
+.modal-gallery {
   justify-content: center;
   position: relative;
-  overflow: visible;
-  width: 85%;
-  height: auto;
-  margin: 0 auto;
-  top:10px;
+  padding: rem-calc(5);
   img {
     width: 100%;
     height: auto;
+    border-radius: 0.5rem;
   }
-}
+}/* ------------------- /Modal gallery ---------------------- */
+/* ------------------- /Modal ---------------------- */
+
+
+/* ------------------- Gallery ---------------------- */
 .gallery {
   background-color: $primary-color;
   padding: rem-calc(30 15);
@@ -153,7 +170,30 @@ h2 {
     height: auto;
     margin: rem-calc(20 0 20 0);
   }
-}/* ------------------- /Gallery Section ---------------------- */
+}/* ------------------- /Gallery ---------------------- */
+
+
+/* ------------------- forms ---------------------- */
+.is-invalid-input {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-error {
+  display: none;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-size: .8rem;
+  font-style: italic;
+  font-weight:normal;
+  color: #fff;
+  background-color: #f00;
+  padding: .1rem .3rem;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  transition: all 0.5s ease-out;
+}
+/* ------------------- /forms ---------------------- */
 
 /* ------------------- /Règles générales ---------------------- */
 
@@ -332,15 +372,36 @@ footer {
     padding-left: 0;
     color: $white;
     &:hover{
-      color: $white;
+      color: $secondary-color;
     }
   }
-  .sitemap .menu>li>a {
-    padding: 0.7rem 0;
+  .sitemap .menu>li {
+    height: 50px;
+    display: flex;
+    align-items: stretch;
+    align-content: center;
     @include breakpoint(large) {
-      padding: 0.7rem 1rem;
+      flex: 1 1 0px;
+      justify-content: center;
+    }
+    a{
+      padding: 0;
+      width: 100%;
+      align-items: center;
+      transition: all 0.3s ease-in-out;
+      @include breakpoint(large) {
+        justify-content: center;
+      }
+      &:hover, &.active {
+        color: $secondary-color;
+        font-size: rem-calc(20);
+        @include breakpoint(large) {
+          font-size: rem-calc(18);
+        }
+      }
     }
   }
+
   /* ------------------- /Footer Links ---------------------- */
   
   /* ------------------- contact-information ---------------------- */
@@ -400,20 +461,27 @@ footer {
     .social{
       font-size: rem-calc(50);
       justify-content: center;
-      &:hover {
+      a, a:hover {
         color: $white;
-      }
-      li:last-child a {
-        padding-right: 0;
+        padding: 0;
+        width: 80px;
+        height: 80px;
+        justify-content: center;
+        
       }
       i {
-        margin-right: 0;
+        margin: 0;
+        display: flex ;
+        align-self: center;
+        &:hover {
+          font-size: rem-calc(60);
+          transition: all 0.3s ease-in-out;
+        }
       }
-      @include breakpoint(medium){
-        justify-content: flex-end;
+      @include breakpoint(medium) {
+        justify-content: flex-end
       }
     }
-    
   }/* ------------------- /Social icon ---------------------- */
   
   /* ------------------- Copyright ---------------------- */ 
@@ -429,7 +497,9 @@ footer {
 
 /* ----------------------------- Pages -------------------------------- */
 
-/* ----------------------------- index.html -------------------------------- */
+/* ----------------------------- index.html and rooms.html (using rooms section in index and rooms page) -------------------------------- */
+
+/* -------------------- Rooms Section --------------------*/
 .rooms {
   padding: rem-calc(30 15);
   width: 100%;
@@ -540,7 +610,6 @@ footer {
 /* ------------------- Book Now Section ---------------------- */
 .book-now {
   padding: rem-calc(50 30);
-  
 }/* ------------------- /Book Now Section ---------------------- */
 
 /* ----------------------------- /index.html -------------------------------- */
@@ -563,6 +632,12 @@ footer {
     justify-content: center;
     min-height: 300px;
   }
+  .content-text {
+    overflow: visible;
+  }
+  .photo {
+    overflow: hidden;
+  }
 }
 /* ------------------- /services.html ---------------------- */
 
@@ -573,8 +648,23 @@ footer {
   padding: rem-calc(30 15);
   &.expanded {
     padding: rem-calc(30 0 0 0);
-    .room-menu {
-      margin-top: rem-calc(15);
+    .room-menu li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      align-items:stretch;
+      a{
+        padding: 0;
+        width: 100%;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        align-items: center;
+        &:hover, &:active {
+          font-size: rem-calc(20);
+          color: $secondary-color;
+        }
+      }
     }
     section:not(#head-room) {
       padding: rem-calc(30);

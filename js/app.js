@@ -6,11 +6,11 @@
   modalheight();
 */
 
-$(function(){
+/*$(function(){
   $('body').is('.is-reveal-open', function(){
     $(this).find('.reveal-overlay').css({'display':'flex !important'});
   });
-});
+});*/
 
 
 $(function(){
