@@ -667,8 +667,11 @@ footer {
       }
     }
     section:not(#head-room) {
-      padding: rem-calc(30);
+      padding: rem-calc(15);
     }
+  }
+  h2 {
+    padding: rem-calc(0 25);
   }
 }
 /* ------------------- /Room Template ---------------------- */
