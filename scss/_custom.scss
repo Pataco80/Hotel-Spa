@@ -309,7 +309,7 @@ header{
   left: 0;
   width: 100%;
   .menu-icon, .menu-icon:hover {
-    z-index: 3000;
+    z-index: 50;
     width: rem-calc(40);
     height: rem-calc(24);
     margin-right: rem-calc(15);
@@ -376,7 +376,7 @@ footer {
     }
   }
   .sitemap .menu>li {
-    height: 50px;
+    height: rem-calc(40);
     display: flex;
     align-items: stretch;
     align-content: center;

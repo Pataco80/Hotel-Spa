@@ -17,9 +17,9 @@
           <h3 class="text-center">Navigation</h3>
           <!-- Menu -->
           <ul class="vertical menu" data-drilldown data-parent-link="true" data-back-button='<li class="js-drilldown-back"><a>Retour</a></li>'>
-            <li><a id="index-link" href="index.html">Home</a></li>
-            <li><a id="about-link" href="about.html">About Us</a></li>
-            <li><a id="services-link" href="services.html">Services</a></li>
+            <li><a class="index-link" href="index.html">Home</a></li>
+            <li><a iclass="about-link" href="about.html">About Us</a></li>
+            <li><a class="services-link" href="services.html">Services</a></li>
             <li class="has-submenu is-drilldown-submenu-parent"><a href="#">Rooms</a>
               <ul class="menu vertical">
                 <li><a id="room-01-link" href="room-01.html">Room 01</a></li>
@@ -30,7 +30,7 @@
                 <li><a id="room-06-link" href="room-06.html">Room 06</a></li>
               </ul>
             </li>
-            <li><a id="contact-link" href="contact.html">Contact</a></li>
+            <li><a class="contact-link" href="contact.html">Contact</a></li>
           </ul>
         </div><!-- /Conteneur de Menu -->
 
@@ -70,63 +70,62 @@
           <!-- Contenu de Page -->
           <section class="content-page">
             <h2 class="show-for-small-only">Contact Us / Booking</h2>
-            <form class="row columns medium-10 large-8 align-centered" data-abide novalidate>
-                <div class="row small-up-1 medium-up-2">
-                    <label class="columns" for="first-name">First Name
-                      <input id="first-name" type="text" placeholder="Your First Name" required>
-                      <span class="form-error">
-                        <i class="fi-alert"></i> this it's required.
-                      </span>
-                    </label>
-                    <label class="columns" for="last-name">Last Name
-                      <input id="last-name" type="text" placeholder="Your Last Name" required>
-                      <span class="form-error">
-                        <i class="fi-alert"></i> this it's required.
-                      </span>
-                    </label>
-                    <label class="columns" for="email">E-mail
-                      <input id="email" type="email" placeholder="Your Email" required>
-                      <span class="form-error">
-                        <i class="fi-alert"></i> this it's required.
-                      </span>
-                    </label>
-                    <label class="columns" for="phone">City
-                      <input id="phone" type="text" placeholder="Your City" required>
-                      <span class="form-error">
-                        <i class="fi-alert"></i> this it's required.
-                      </span>
-                    </label>
-                    <label class="columns" for="people" required>Your People
-                      <select name="people" id="people">
-                        <option value="0" selected disabled>Choise...</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="more">more</option>
-                      </select>
-                      <span class="form-error">
-                        <i class="fi-alert"></i> this it's required.
-                      </span>
-                    </label>
-                    <label class="columns" for="date">Arival date
-                      <input id="date" type="date" required>
-                      <span class="form-error">
-                        <i class="fi-alert"></i> this it's required.
-                      </span>
-                    </label>
-                    <div class="columns">
-                      <legend>Extra Bed:</legend>
-                      <input id="extrabedyes" type="radio" name="extrabed" value="yes" required><label for="extrabedyes">Yes</label>
-                      <input id="extrabedno" type="radio" name="extrabed" value="no" required><label for="extrabedno">No</label>
-                    </div>
+            <form class="row columns medium-10 large-8 align-centered" data-abide novalidate data-live-validate="true" data-validate-on-blur="true">
+              <div class="row small-up-1 medium-up-2">
+                <label class="columns" for="first-name">First Name
+                  <input id="first-name" type="text" placeholder="Your First Name" required>
+                  <span class="form-error">
+                    <i class="fi-alert"></i> this it's required.
+                  </span>
+                </label>
+                <label class="columns" for="last-name">Last Name
+                  <input id="last-name" type="text" placeholder="Your Last Name" required>
+                  <span class="form-error">
+                    <i class="fi-alert"></i> this it's required.
+                  </span>
+                </label>
+                <label class="columns" for="email">E-mail
+                  <input id="email" type="email" placeholder="Your Email" required>
+                  <span class="form-error">
+                    <i class="fi-alert"></i> this it's required.
+                  </span>
+                </label>
+                <label class="columns" for="phone">City
+                  <input id="phone" type="text" placeholder="Your City" required>
+                  <span class="form-error">
+                    <i class="fi-alert"></i> this it's required.
+                  </span>
+                </label>
+                <label class="columns" for="people" required>Your People
+                  <select name="people" id="people">
+                    <option value="0" selected disabled>Choise...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="more">more</option>
+                  </select>
+                  <span class="form-error">
+                    <i class="fi-alert"></i> this it's required.
+                  </span>
+                </label>
+                <label class="columns" for="date">Arival date
+                  <input id="date" type="date" required>
+                  <span class="form-error">
+                    <i class="fi-alert"></i> this it's required.
+                  </span>
+                </label>
+                <div class="columns">
+                  <legend>Extra Bed:</legend>
+                  <input id="extrabedyes" type="radio" name="extrabed" value="yes" required><label for="extrabedyes">Yes</label>
+                  <input id="extrabedno" type="radio" name="extrabed" value="no" required><label for="extrabedno">No</label>
                 </div>
-                
-                <div class="row align-spaced box-button">
-                  <button class="button" type="reset">Reset</button>
-                  <button class="button" type="submit">Submit</button>
-                </div>
-              </form>
+              </div>
+              <div class="row align-spaced box-button">
+                <button class="button" type="reset">Reset</button>
+                <button class="button" type="submit">Submit</button>
+              </div>
+            </form>
           </section>
           <!-- /Contenu de Page -->
 
@@ -135,12 +134,12 @@
             <div class="footer-container row align-center">
               <!-- Footer Nav -->
               <nav class="sitemap small-5 medium-3 large-5 columns">
-                <ul class="menu vertical large-horizontal">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="rooms.html">Rooms</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                <ul class="menu vertical large-horizontal expanded">
+                  <li><a class="index-link" href="index.html">Home</a></li>
+                  <li><a class="about-link" href="about.html">About Us</a></li>
+                  <li><a class="services-link" href="services.html">Services</a></li>
+                  <li><a class="rooms-link" href="rooms.html">Rooms</a></li>
+                  <li><a class="contact-link" href="contact.html">Contact</a></li>
                 </ul>
               </nav><!-- /Footer Nav -->
 
@@ -179,7 +178,7 @@
     <script src="js/foundation.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-      $('#contact-link').addClass('active');
+      $('.contact-link').addClass('active');
     </script>
   </body>
 </html>

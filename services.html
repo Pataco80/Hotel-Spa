@@ -17,9 +17,9 @@
           <h3 class="text-center">Navigation</h3>
           <!-- Menu -->
           <ul class="vertical menu" data-drilldown data-parent-link="true" data-back-button='<li class="js-drilldown-back"><a>Retour</a></li>'>
-            <li><a id="index-link" href="index.html">Home</a></li>
-            <li><a id="about-link" href="about.html">About Us</a></li>
-            <li><a id="services-link" href="services.html">Services</a></li>
+            <li><a class="index-link" href="index.html">Home</a></li>
+            <li><a iclass="about-link" href="about.html">About Us</a></li>
+            <li><a class="services-link" href="services.html">Services</a></li>
             <li class="has-submenu is-drilldown-submenu-parent"><a href="#">Rooms</a>
               <ul class="menu vertical">
                 <li><a id="room-01-link" href="room-01.html">Room 01</a></li>
@@ -30,7 +30,7 @@
                 <li><a id="room-06-link" href="room-06.html">Room 06</a></li>
               </ul>
             </li>
-            <li><a id="contact-link" href="contact.html">Contact</a></li>
+            <li><a class="contact-link" href="contact.html">Contact</a></li>
           </ul>
         </div><!-- /Conteneur de Menu -->
 
@@ -115,12 +115,12 @@
             <div class="footer-container row align-center">
               <!-- Footer Nav -->
               <nav class="sitemap small-5 medium-3 large-5 columns">
-                <ul class="menu vertical large-horizontal">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="rooms.html">Rooms</a></li>
-                  <li><a href="contact.html">Contact</a></li>
+                <ul class="menu vertical large-horizontal expanded">
+                  <li><a class="index-link" href="index.html">Home</a></li>
+                  <li><a class="about-link" href="about.html">About Us</a></li>
+                  <li><a class="services-link" href="services.html">Services</a></li>
+                  <li><a class="rooms-link" href="rooms.html">Rooms</a></li>
+                  <li><a class="contact-link" href="contact.html">Contact</a></li>
                 </ul>
               </nav><!-- /Footer Nav -->
 
@@ -159,7 +159,7 @@
     <script src="js/foundation.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-      $('#services-link').addClass('active');
+      $('.services-link').addClass('active');
     </script>
   </body>
 </html>
